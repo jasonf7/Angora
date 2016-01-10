@@ -2,11 +2,17 @@ doctype html
 html(ng-app='angora')
     head
         title #{title}
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato')
+        link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Ruda:400,900,700')
+        link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        link(rel='stylesheet', href='../css/creativelinks.css')
+        link(rel='stylesheet', href='../css/main.css')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js')
         script(src='../index.js')
         script(src='../js/signUpController.js')
+        script(src='../js/homeController.js')
     body
         block content
-            div(ng-view)
+            div(ng-view class='main')

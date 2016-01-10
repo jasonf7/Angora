@@ -5,6 +5,10 @@ var app = angular.module('angora', [
 
 app.config(function($routeProvider) {
    $routeProvider
+       .when('/', {
+           controller: 'homeController',
+           templateUrl: 'views/partials/home.html'
+       })
        .when('/signup', {
            controller: 'signupController',
            templateUrl: 'views/partials/signup.html'
