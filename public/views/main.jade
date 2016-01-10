@@ -2,18 +2,23 @@ doctype html
 html(ng-app='angora')
     head
         title #{title}
+        meta(name='google-signin-client_id' content='478037030670-lgvtll3r57al8kv7fla07fhrnf6q8c74.apps.googleusercontent.com')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato')
         link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Ruda:400,900,700')
         link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
         link(rel='stylesheet', href='../css/creativelinks.css')
+        link(rel='stylesheet', href='../css/creativebuttons.css')
         link(rel='stylesheet', href='../css/main.css')
         link(rel='stylesheet', href='../css/home.css')
+        link(rel='stylesheet', href='../css/signup.css')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js')
+        script(src='https://apis.google.com/js/platform.js', async="", defer="")
         script(src='../index.js')
-        script(src='../js/signUpController.js')
+        script(src='../js/signupController.js')
         script(src='../js/homeController.js')
     body
         block content
             div(ng-view class='main')
+            div(id='fb-root')
