@@ -20,7 +20,8 @@ module.exports = function(grunt) {
                     optimization: 2
                 },
                 files: {
-                    'public/css/main.css': 'public/less/main.less'
+                    'public/css/main.css': 'public/less/main.less',
+                    'public/css/home.css': 'public/less/home.less'
                 }
             }
         },
