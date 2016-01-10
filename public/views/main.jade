@@ -1,10 +1,12 @@
-//
-   Created by jasonf7 on 09/01/16.
-
 doctype html
-html
+html(ng-app='angora')
     head
         title #{title}
+        script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
+        script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js')
+        script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js')
+        script(src='../index.js')
+        script(src='../js/signUpController.js')
     body
         block content
-        h1 LOL
+            div(ng-view)
