@@ -8,7 +8,8 @@ module.exports = function(grunt) {
                 files: {
                     'public/views/partials/404.html': 'public/views/partials/404.jade',
                     'public/views/partials/signup.html': 'public/views/partials/signup.jade',
-                    'public/views/partials/home.html': 'public/views/partials/home.jade'
+                    'public/views/partials/home.html': 'public/views/partials/home.jade',
+                    'public/views/partials/nearby.html': 'public/views/partials/nearby.jade'
                 }
             }
         },

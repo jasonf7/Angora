@@ -16,6 +16,10 @@ app.config(function($routeProvider) {
        .when('/404', {
            templateUrl: 'views/partials/404.html'
        })
+       .when('/nearby', {
+           controller: 'nearbyController',
+           templateUrl: 'views/partials/nearby.html'
+       })
        .otherwise({
            redirectTo: '/404'
        });

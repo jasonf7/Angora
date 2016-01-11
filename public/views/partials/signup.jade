@@ -1,10 +1,11 @@
 div(class="div-signup" ng-controller='signupController')
-    div(class='title') Angora
-    div(class='description') Discover new hairstyles around your area!
-    div
-        button(class='btn btn-4 btn-4c icon-arrow-right-fb btn-social btn-social-fb' ng-click="fbLogin()") Continue
-    div
-        button(class='btn btn-4 btn-4c icon-arrow-right-google btn-social btn-social-google' ng-click="googleLogin()") Continue
-    div(class='seperator') - OR -
-    div(class='options cl-effect-8')
-        a(href="#/") sign up later and continue;
+    div(ng-class='animateGroup')
+        div(class='title') Angora
+        div(class='description') Discover new hairstyles around your area!
+        div
+            button(class='btn btn-4 btn-4c icon-arrow-right-fb btn-social btn-social-fb' ng-click="fbLogin()") Continue
+        div
+            button(class='btn btn-4 btn-4c icon-arrow-right-google btn-social btn-social-google' ng-click="googleLogin()") Continue
+        div(class='seperator') - OR -
+        div(class='options cl-effect-8')
+            a(href="#/") sign up later and continue;
