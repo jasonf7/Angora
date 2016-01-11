@@ -40,4 +40,5 @@ angular.module('angora')
             });
         }
     };
+    $scope.animateGroup = 'animated bounceIn';
 }]);
