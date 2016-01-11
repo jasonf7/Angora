@@ -17,8 +17,10 @@ html(ng-app='angora')
         script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js')
         script(src='https://apis.google.com/js/platform.js', async="", defer="")
         script(src='../index.js')
-        script(src='../js/signupController.js')
-        script(src='../js/homeController.js')
+        script(src='../js/services/nearby.js')
+        script(src='../js/controllers/nearbyController.js')
+        script(src='../js/controllers/signupController.js')
+        script(src='../js/controllers/homeController.js')
     body
         block content
             div(ng-view class='main')
