@@ -8,23 +8,19 @@ angular.module('angora')
                 total: 0
             };
             o.getStylists = function(location) {
-                var req = {
-                    method: 'GET',
-                    url: '/#/api/stylists/get',
-                    headers: {
-                        'Content-Type': undefined
-                    },
-                    data: { location: location }
+                var query = {
+                    params: {'location':location}
                 };
 
-                return $http(req).then(function(value) {
-                    angular.copy(value.region, o.region);
-                    angular.copy(value.businesses, o.businesses);
-                    angular.copy(value.total, o.total);
-                    console.log(value);
-                }, function(reason) {
-                    console.log(reason);
-                });
+                $http.get('/api/stylists/get', query)
+                    .then(function (response) {
+                        angular.copy(response.data.region, o.region);
+                        angular.copy(response.data.businesses, o.businesses);
+                        angular.copy(response.data.total, o.total);
+                        console.log(response);
+                    }, function(reason) {
+                        console.log(reason);
+                    });
             };
             return o;
         }

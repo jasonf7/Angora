@@ -7,6 +7,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
 var user = require('./app/routes/user');
+var stylists = require('./app/routes/stylists');
 
 var db = require('./config/db.js');
 
@@ -29,5 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./app/routes')(app);
 
 app.use('/api/user', user);
+
+app.use('/api/stylists', stylists);
 
 module.exports = app;
