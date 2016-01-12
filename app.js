@@ -4,8 +4,13 @@ var app = express();
 var jade = require('jade');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var mongoose = require('mongoose');
+
+var user = require('./app/routes/user');
 
 var db = require('./config/db.js');
+
+mongoose.connect(db.url);
 
 app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'jade');
@@ -22,5 +27,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./app/routes')(app);
+
+app.use('/api/user', user);
 
 module.exports = app;

@@ -37,12 +37,12 @@ app.run(['$rootScope', '$window', function($rootScope, $window){
             version    : 'v2.5'
         });
 
-        FB.getLoginStatus(function(response) {
-            console.log(response.status);
-            if (response.status !== 'connected') {
-                $window.location.href = "#/signup";
-            }
-        });
+        //FB.getLoginStatus(function(response) {
+        //    console.log(response.status);
+        //    if (response.status !== 'connected') {
+        //        $window.location.href = "#/signup";
+        //    }
+        //});
     };
 
     (function(d, s, id){

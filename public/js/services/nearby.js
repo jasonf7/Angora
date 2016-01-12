@@ -15,7 +15,7 @@ angular.module('angora')
                         'Content-Type': undefined
                     },
                     data: { location: location }
-                }
+                };
 
                 return $http(req).then(function(value) {
                     angular.copy(value.region, o.region);
