@@ -7,9 +7,15 @@ angular.module('angora')
                 businesses: [],
                 total: 0
             };
-            o.getStylists = function(location) {
+            o.getStylists = function(coordinate) {
                 var query = {
-                    params: {'location':location}
+                    params: {
+                        latitude : coordinate.latitude,
+                        longitude: coordinate.longitude,
+                        accuracy : coordinate.accuracy,
+                        altitude : coordinate.altitude,
+                        altitudeAccuracy : coordinate.altitudeAccuracy
+                    }
                 };
 
                 $http.get('/api/stylists/get', query)

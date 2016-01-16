@@ -9,7 +9,7 @@ angular.module('angora')
             function(data) {
                 var prevUser = angular.fromJson($window.sessionStorage.currentUser)
                 $window.sessionStorage.currentUser = angular.toJson(user.currentUser);
-                if (Object.keys(user.currentUser).length > 0 || prevUser.haircuts !== undefined) {
+                if (Object.keys(user.currentUser).length > 0 || (prevUser !== undefined && prevUser.haircuts !== undefined)) {
                     $window.location.href = "/";
                 }
             },

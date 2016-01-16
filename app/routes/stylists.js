@@ -9,23 +9,34 @@ var yelp = new Yelp({
     consumer_key: '4he8dUZYmwbAiTYat4wFlQ',
     consumer_secret: 'hmhE0IT3y3wsTQPQjbQ_3cDDBsY',
     token: 'ueU6Je8iKlI1clKwH6KCcsQzd946RrTw',
-    token_secret: 'Y8NCamiusYCjWiUADvBX6OH6lHc',
+    token_secret: 'Y8NCamiusYCjWiUADvBX6OH6lHc'
 });
 
-var default_parameters = {
-    location: 'San+Francisco',
-    category_filter: 'hair',
-    offset: '0',
-    sort: '1'
-};
-
 router.get('/get', function(req, res) {
-    var location = {};
-    var query = url.parse(req.url, true).query;
-    if (query.location != null) {
-        location = {'location': query.location};
+    var geocoord_param = [
+        req.query.latitude,
+        req.query.longitude
+    ];
+
+    if (req.query.accuracy !== undefined) {
+        geocoord_param.push(req.query.accuracy);
     }
-    var parameters = _.assign(default_parameters, location);
+
+    if (req.query.altitude !== undefined) {
+        geocoord_param.push(req.query.altitude);
+    }
+
+    if (req.query.altitudeAccuracy !== undefined) {
+        geocoord_param.push(req.query.altitudeAccuracy);
+    }
+
+    var parameters = {
+        ll: geocoord_param.join(),
+        category_filter: 'hair',
+        offset : '0',
+        sort : '1'
+    };
+
     yelp.search(parameters)
         .then(function (data) {
             res.json(data);

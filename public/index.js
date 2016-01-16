@@ -1,6 +1,15 @@
+window._ = require('lodash');
+require('angular');
+require('angular-route');
+require('angular-animate');
+require('angular-simple-logger');
+require('angular-google-maps');
+
 var app = angular.module('angora', [
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'nemLogging',
+    'uiGmapgoogle-maps'
 ]);
 
 app.config(function($routeProvider) {
@@ -23,6 +32,14 @@ app.config(function($routeProvider) {
        .otherwise({
            redirectTo: '/404'
        });
+});
+
+app.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        //key: 'AIzaSyDQ0rsLz3l_4I5C7mjRKk_qm_yPVlqB99s',
+        v: '3.20',
+        libraries: 'weather, geometry, visualization'
+    })
 });
 
 app.run(['$rootScope', '$window', function($rootScope, $window){

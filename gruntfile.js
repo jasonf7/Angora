@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         jade: {
             compile: {
                 options: {
@@ -23,8 +24,15 @@ module.exports = function(grunt) {
                 files: {
                     'public/css/main.css': 'public/less/main.less',
                     'public/css/home.css': 'public/less/home.less',
-                    'public/css/signup.css': 'public/less/signup.less'
+                    'public/css/signup.css': 'public/less/signup.less',
+                    'public/css/nearby.css': 'public/less/nearby.less'
                 }
+            }
+        },
+        browserify: {
+            main: {
+                src: 'public/index.js',
+                dest: 'public/bundle.js'
             }
         },
         watch: {
@@ -36,6 +44,10 @@ module.exports = function(grunt) {
             less: {
                 files: 'public/less/*.less',
                 tasks: ['less']
+            },
+            browserify: {
+                files: ['public/index.js'],
+                tasks: ['browserify']
             }
         }
     });
@@ -43,7 +55,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('build', 'Convert Jade templates into html templates', ['jade', 'less']);
-    grunt.registerTask('default', 'Convert Jade templates into html templates', ['jade', 'less', 'watch']);
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.registerTask('build', 'Convert Jade templates into html templates', ['jade', 'less', 'browserify']);
+    grunt.registerTask('default', 'Convert Jade templates into html templates', ['jade', 'less', 'browserify', 'watch']);
 
 };

@@ -1,0 +1,11 @@
+div(class="outer")
+    div(class="middle")
+        div(class="div-nearby")
+            div(class="search form-group has-feedback")
+                input(type="text" class="form-control" placeholder="Search by location...")
+                i(class="glyphicon glyphicon-black glyphicon-search form-control-feedback")
+                button(class="btn btn-6 btn-6c") Submit
+
+
+            div(class="google-map")
+                ui-gmap-google-map(center="map.center" zoom="map.zoom")

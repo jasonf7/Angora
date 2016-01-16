@@ -19,7 +19,7 @@ app.engine('jade', jade.__express);
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(bodyParser.json({ type: 'application/json' }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
