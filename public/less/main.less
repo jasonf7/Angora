@@ -11,8 +11,48 @@ html, body {
   color: white;
 }
 
+.navbar {
+  background-color: transparent;
+  position: absolute;
+  min-height:30px;
+  width: 100%;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+
+  .navbar-nav {
+
+    li {
+
+      a {
+        font-size: 1.2em;
+        position: relative;
+        color: white;
+        text-transform: capitalize;
+        padding: 10px 10px;
+        margin: 10px 10px;
+      }
+
+      a:hover, nav a:focus {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
 .main {
   height: 100%;
   width: 100%;
-  position: fixed;
+  position: absolute;
+}
+
+.blur {
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -ms-filter: blur(6px);
+  -o-filter: blur(6px);
+  filter: blur(6px);
+  filter: url(blur.svg#blur);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='6');
 }

@@ -1,75 +1,81 @@
-.div-signup {
-  text-align: center;
-  position: relative;
-  top: 50%;
-  transform: translateY(-60%);
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 
-  .title {
-    color: white;
-    font-size: 180px;
-    margin-bottom: 10px;
-  }
+  .div-signup {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 
-  .description {
-    font-size: 25px;
-  }
-
-  .options {
-    font-size: 20px;
-
-    a {
+    .title {
       color: white;
-      text-decoration: none;
-      transition: color 0.5s ease;
+      font-size: 160px;
+      margin-bottom: 10px;
     }
 
-    a:hover {
+    .description {
+      font-size: 25px;
+    }
+
+    .options {
+      font-size: 20px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.5s ease;
+      }
+
+      a:hover {
+        color: orange;
+      }
+    }
+
+    .separator {
+      font-size: 30px;
+    }
+
+    .icon-arrow-right-google:before {
+      /*content: "\e00d";*/
+      content: "\e006";
+      top: -8px;
+      color: black;
+    }
+
+    .icon-arrow-right-fb:before {
+      /*content: "\e00d";*/
+      content: "\e006";
+      top: -8px;
+      color: white;
+    }
+  }
+
+  .btn-social {
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 20px;
+    height: 75px;
+    width: 400px;
+  }
+
+  .btn-social-fb, .btn-social-fb:active, .btn-social-fb:hover, .btn-social-fb:focus {
+    color: white;
+    background: #3b5998 url('/img/fb-signin.png') no-repeat 5% 50%;
+    background-size: auto 70%;
+  }
+
+  .btn-social-google, .btn-social-google:active, .btn-social-google:hover, .btn-social-google:focus {
+    color: black;
+    background: white url('/img/google-signin.png') no-repeat 5% 50%;
+    background-size: auto 70%;
+
+    .icon-arrow-right:before {
+      /*content: "\e00d";*/
+      content: "\e006";
+      top: -8px;
       color: orange;
     }
-  }
-
-  .separator {
-    font-size: 30px;
-  }
-
-  .icon-arrow-right-google:before {
-    /*content: "\e00d";*/
-    content: "\e006";
-    top: -8px;
-    color: black;
-  }
-
-  .icon-arrow-right-fb:before {
-    /*content: "\e00d";*/
-    content: "\e006";
-    top: -8px;
-    color: white;
-  }
-}
-
-.btn-social {
-  border-radius: 0px;
-  padding: 0px;
-  font-size: 20px;
-  height: 75px;
-  width: 400px;
-}
-
-.btn-social-fb, .btn-social-fb:active, .btn-social-fb:hover, .btn-social-fb:focus {
-  color: white;
-  background: #3b5998 url('/img/fb-signin.png') no-repeat 5% 50%;
-  background-size: auto 70%;
-}
-
-.btn-social-google, .btn-social-google:active, .btn-social-google:hover, .btn-social-google:focus {
-  color: black;
-  background: white url('/img/google-signin.png') no-repeat 5% 50%;
-  background-size: auto 70%;
-
-  .icon-arrow-right:before {
-    /*content: "\e00d";*/
-    content: "\e006";
-    top: -8px;
-    color: orange;
   }
 }

@@ -57,6 +57,6 @@ angular.module('angora')
                 signIn(cachedAuth);
             }
         };
-        $scope.animateGroup = 'animated bounceIn';
+        $scope.animateGroup = 'animated fadeIn';
     }]
 );
