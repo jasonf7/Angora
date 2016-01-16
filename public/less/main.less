@@ -21,23 +21,31 @@ html, body {
   border-bottom: 0px;
 
   .navbar-nav {
+    float: left !important;
 
-    li {
+    >li {
+      float: left !important;
 
-      a {
+      >a {
         font-size: 1.2em;
         position: relative;
         color: white;
         text-transform: capitalize;
         padding: 10px 10px;
         margin: 10px 10px;
+        -webkit-transition: color 0.3s ease-out;
+        transition: color 0.3s  ease-out;
       }
 
-      a:hover, nav a:focus {
+      >a:hover, >a:focus {
         text-decoration: none;
-        color: white;
+        color: orange;
       }
     }
+  }
+
+  .navbar-right {
+    float: right!important;
   }
 }
 
