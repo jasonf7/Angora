@@ -1,0 +1,17 @@
+div(class='stylists-modal')
+    div(class='modal-header')
+        div(class='container')
+            h3(class='modal-title' ng-bind='business.name')
+    div(class='modal-body row')
+        div(class='col-md-3')
+            img(class='stylist-dp' ng-src='{{ business.image_url }}')
+        div(class='col-md-9')
+            div(class="item")
+                span(class='glyphicon glyphicon-scissors') &nbsp
+                span(ng-bind='business.location.display_address')
+            div(class="item")
+                span(class='glyphicon glyphicon-earphone') &nbsp;
+                span(ng-bind='business.display_phone')
+    div(class='modal-footer')
+        button(class='btn btn-primary btn-bootstrap' type='button' ng-click='checkIn()') Check In
+        button(class='btn btn-warning btn-bootstrap' type='button' ng-click='cancel()') Cancel

@@ -10,7 +10,8 @@ module.exports = function(grunt) {
                     'public/views/partials/404.html': 'public/views/partials/404.jade',
                     'public/views/partials/signup.html': 'public/views/partials/signup.jade',
                     'public/views/partials/home.html': 'public/views/partials/home.jade',
-                    'public/views/partials/nearby.html': 'public/views/partials/nearby.jade'
+                    'public/views/partials/nearby.html': 'public/views/partials/nearby.jade',
+                    'public/views/modals/stylistsModal.html': 'public/views/modals/stylistsModal.jade'
                 }
             }
         },
@@ -25,7 +26,8 @@ module.exports = function(grunt) {
                     'public/css/main.css': 'public/less/main.less',
                     'public/css/home.css': 'public/less/home.less',
                     'public/css/signup.css': 'public/less/signup.less',
-                    'public/css/nearby.css': 'public/less/nearby.less'
+                    'public/css/nearby.css': 'public/less/nearby.less',
+                    'public/css/stylistsModal.css': 'public/less/stylistsModal.less'
                 }
             }
         },
@@ -38,7 +40,10 @@ module.exports = function(grunt) {
         watch: {
             grunt: { files: ['Gruntfile.js'] },
             jade: {
-                files: 'public/views/partials/*.jade',
+                files: [
+                    'public/views/partials/*.jade',
+                    'public/views/modals/*.jade'
+                ],
                 tasks: ['jade']
             },
             less: {

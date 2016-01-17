@@ -4,12 +4,14 @@ require('angular-route');
 require('angular-animate');
 require('angular-simple-logger');
 require('angular-google-maps');
+require('angular-ui-bootstrap');
 
 var app = angular.module('angora', [
     'ngRoute',
     'ngAnimate',
     'nemLogging',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ui.bootstrap'
 ]);
 
 app.config(function($routeProvider) {
