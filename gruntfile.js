@@ -11,7 +11,8 @@ module.exports = function(grunt) {
                     'public/views/partials/signup.html': 'public/views/partials/signup.jade',
                     'public/views/partials/home.html': 'public/views/partials/home.jade',
                     'public/views/partials/nearby.html': 'public/views/partials/nearby.jade',
-                    'public/views/modals/stylistsModal.html': 'public/views/modals/stylistsModal.jade'
+                    'public/views/modals/stylistsModal.html': 'public/views/modals/stylistsModal.jade',
+                    'public/views/markers/stylist.html': 'public/views/markers/stylist.jade'
                 }
             }
         },
@@ -27,7 +28,8 @@ module.exports = function(grunt) {
                     'public/css/home.css': 'public/less/home.less',
                     'public/css/signup.css': 'public/less/signup.less',
                     'public/css/nearby.css': 'public/less/nearby.less',
-                    'public/css/stylistsModal.css': 'public/less/stylistsModal.less'
+                    'public/css/stylistsModal.css': 'public/less/stylistsModal.less',
+                    'public/css/stylistMarker.css': 'public/less/stylistMarker.less'
                 }
             }
         },
@@ -42,7 +44,8 @@ module.exports = function(grunt) {
             jade: {
                 files: [
                     'public/views/partials/*.jade',
-                    'public/views/modals/*.jade'
+                    'public/views/modals/*.jade',
+                    'public/views/markers/*.jade'
                 ],
                 tasks: ['jade']
             },

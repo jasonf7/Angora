@@ -1,12 +1,12 @@
 div(class="outer")
     div(class="middle")
         div(class="div-nearby")
-            a(href='' ng-click='open()' class='cl-effect-4') marker
             div(class="search form-group has-feedback")
                 input(type="text" class="form-control" placeholder="Search by location...")
                 i(class="glyphicon glyphicon-black glyphicon-search form-control-feedback")
-                button(class="btn btn-6 btn-6c") Submit
-
 
             div(class="google-map")
-                ui-gmap-google-map(center="map.center" zoom="map.zoom")
+                ui-gmap-google-map(center="map.center" zoom="map.zoom" draggable="true" options="map.options" bounds="map.bounds" events="mapEvents")
+                    ui-gmap-markers(models="mapMarkers" coords="'coordinate'" fit="true" click="onMarkerClick" icon="'icon'")
+                        ui-gmap-windows(show="show" templateUrl="'templateUrl'" templateParameter="'templateParameter'")
+                    ui-gmap-marker(idKey="homeMarker.idKey" coords="homeMarker.coords" options="options")

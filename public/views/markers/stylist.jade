@@ -1,0 +1,12 @@
+div(class="stylist-marker" ng-controller="stylistMarkerController")
+    div(class="col-sm-5" ng-show="business.hasImage")
+        img(src="{{ business.imageUrl }}" class="stylist-img")
+    div(ng-class="columnClass")
+        div(class="business-title" ng-bind="business.name")
+        div
+            span(ng-bind="business.distance")
+            span(ng-bind="business.unit")
+            span &nbsp;away
+        div(class="cl-effect-21 business-link")
+            a(ng-click="open()") Details
+
