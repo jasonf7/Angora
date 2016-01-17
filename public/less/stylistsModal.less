@@ -2,27 +2,81 @@
   opacity: 0.3;
 }
 
+.modal-footer {
+  text-align: center;
+}
+
 .stylists-modal {
   color: black;
 
   .stylist-dp {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+    margin: 0px auto 20px auto;
     padding:1px;
     border:1px solid black;
     background-color:azure;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border-radius: 20px;
   }
 
-  .item {
+  .x-btn {
+    float: right;
+    margin: 5px auto;
+    transition: color 0.1s ease-out;
+  }
 
+  .x-btn:hover, .x-btn:focus {
+    cursor: pointer;
+    color: grey;
+  }
+
+  .item {
+    font-size: 16px;
+
+    .logo {
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
     span {
-      font-size: 16px;
       margin-bottom: 10px;
+    }
+  }
+
+  .cl-effect-21 {
+
+    a {
+      color: black;
+      font-size: 14px;
+      text-decoration: none;
+      -webkit-transition: color 0.3s ease-out;
+      transition: color 0.3s  ease-out;
+    }
+  }
+
+  .google-effect {
+
+    >a:hover, >a:focus {
+      text-decoration: none;
+      color: green;
+    }
+
+    a:before, a:after {
+      background: green;
+    }
+  }
+
+  .yelp-effect {
+
+    >a:hover, >a:focus {
+      text-decoration: none;
+      color: red;
+    }
+
+    a:before, a:after {
+      background: red;
     }
   }
 

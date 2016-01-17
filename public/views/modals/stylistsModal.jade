@@ -1,10 +1,15 @@
 div(class='stylists-modal')
     div(class='modal-header')
-        div(class='container')
-            h3(class='modal-title' ng-bind='business.name')
+        div(class='container col-xs-12')
+            div(class="row")
+                div(class='col-xs-3')
+                    h3(class='modal-title' ng-bind='business.name')
+                div(class='col-xs-3 col-xs-offset-6')
+                    h3(class='modal-title')
+                        span(class='glyphicon glyphicon-remove x-btn' ng-click='cancel()')
     div(class='modal-body row')
         div(class='col-md-3')
-            img(class='stylist-dp' ng-src='{{ business.image_url }}')
+            img(class='stylist-dp' ng-src='{{ mdResImageUrl }}')
         div(class='col-md-9')
             div(class="item")
                 span(class='glyphicon glyphicon-scissors') &nbsp
@@ -12,6 +17,21 @@ div(class='stylists-modal')
             div(class="item")
                 span(class='glyphicon glyphicon-earphone') &nbsp;
                 span(ng-bind='business.display_phone')
+            div(class="item")
+                span(class='glyphicon glyphicon-heart') &nbsp;
+                span(ng-bind='convertToStar(business.rating)')
+            div(class="item")
+                span(class='glyphicon glyphicon-random') &nbsp;
+                span(ng-bind='formatNumberToDistance(business.distance)')
+            div(class='col-xs-5')
+                div(class="item cl-effect-21 yelp-effect")
+                    a(target='blank' ng-href='{{ business.url }}')
+                        img(class='logo' src='/img/yelp.png')
+                        span reviews
+            div(class='col-xs-5')
+                div(class="item cl-effect-21 google-effect")
+                    a(target='blank' ng-href='{{ getDirection() }}')
+                        img(class='logo' src='/img/google-maps.png')
+                        span directions
     div(class='modal-footer')
         button(class='btn btn-primary btn-bootstrap' type='button' ng-click='checkIn()') Check In
-        button(class='btn btn-warning btn-bootstrap' type='button' ng-click='cancel()') Cancel

@@ -17,6 +17,7 @@ angular.module('angora')
         console.log('requesting position!');
         navigator.geolocation.getCurrentPosition(function (position) {
             console.log('got position!');
+            $scope.userLocation = position.coords;
             nearby.getStylists(position.coords);
         }, function(err) {
             console.log(err);
@@ -41,7 +42,10 @@ angular.module('angora')
             size: 'lg',
             resolve: {
                 business: function () {
-                    return nearby.businesses[1];
+                    return nearby.businesses[4];
+                },
+                userLocation: function () {
+                    return $scope.userLocation;
                 }
             }
         });
